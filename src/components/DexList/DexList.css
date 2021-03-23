@@ -1,7 +1,13 @@
 table {
   border-radius: 10px;
+  border-collapse: collapse;
   width: 100%;
   -webkit-box-shadow: 0 0 5px 6px rgba(0, 0, 0, 0.4);
   -moz-box-shadow:    0 0 5px 6px rgba(0, 0, 0, 0.4);
   box-shadow:         0 0 5px 6px rgba(0, 0, 0, 0.4);
+  margin: 1%;
+}
+
+table, tr {
+  border: 2px solid #000;
 }
