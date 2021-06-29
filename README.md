@@ -1,6 +1,6 @@
 # React Dex
 
-A project using React.js to build an interactive, response web application to display the Pokédex from the Pokémon series.
+A project using React.js to build an interactive, responsive web application to display the Pokédex from the Pokémon series.
 
 This app is not affiliated with Nintendo/Creatures Inc./GAME FREAK inc./The Pokémon Company in any way and is used purely for educational purposes. Pokémon, Pokémon character names and images are copyrights of Nintendo. © 1995–2021
 
