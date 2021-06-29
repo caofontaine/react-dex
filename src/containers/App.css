@@ -1,4 +1,13 @@
-.container {
+h1 {
+  font-family: 'PocketMonk';
+  text-align: center;
+  font-size: 72px;
+  color: #FFCB05;
+  -webkit-text-stroke: 1px #2A75BB;
+  margin: .25em auto;
+}
+
+.dex-list-container {
   display: flex;
   justify-content: center;
 }

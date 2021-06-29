@@ -1,56 +1,66 @@
+// Data used for testing without database connection
 export const dex = [
   {
     dexnum: '0001',
     name: 'Bulbasaur',
-    type: 'Grass,Poison',
+    type1: 'Grass',
+    type2: 'Poison',
     region: 'Kanto'
   },
   {
     dexnum: '0002',
     name: 'Ivysaur',
-    type: 'Grass,Poison',
+    type1: 'Grass',
+    type2: 'Poison',
     region: 'Kanto'
   },
   {
     dexnum: '0003',
     name: 'Venusaur',
-    type: 'Grass,Poison',
+    type1: 'Grass',
+    type2: 'Poison',
     region: 'Kanto'
   },
   {
     dexnum: '0004',
     name: 'Charmander',
-    type: 'Fire',
+    type1: 'Fire',
+    type2: '',
     region: 'Kanto'
   },
   {
     dexnum: '0005',
     name: 'Charmeleon',
-    type: 'Fire',
+    type1: 'Fire',
+    type2: '',
     region: 'Kanto'
   },
   {
     dexnum: '0006',
     name: 'Charizard',
-    type: 'Fire,Flying',
+    type1: 'Fire',
+    type2: 'Flying',
     region: 'Kanto'
   },
   {
     dexnum: '0007',
     name: 'Squirtle',
-    type: 'Water',
+    type1: 'Water',
+    ype2: '',
     region: 'Kanto'
   },
   {
     dexnum: '0008',
     name: 'Wartortle',
-    type: 'Water',
+    type1: 'Water',
+    ype2: '',
     region: 'Kanto'
   },
   {
     dexnum: '0009',
     name: 'Blastoise',
-    type: 'Water',
+    type1: 'Water',
+    ype2: '',
     region: 'Kanto'
   }
 ];

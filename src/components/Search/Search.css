@@ -1,0 +1,22 @@
+.search {
+  margin: 1em auto;
+  text-align: center;
+}
+
+.search-text {
+  box-sizing: border-box;
+  background-color: #FFF;
+  border-color: #000;
+  border-radius: 1em;
+  margin-right: 10px;
+  height: 35px;
+  width: 200px;
+}
+
+.search-button {
+  background-color: #3B4CCA;
+  border-radius: 1em;
+  color: #FFDE00;
+  height: 35px;
+  width: 125px;
+}

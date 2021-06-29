@@ -3,6 +3,11 @@
   src: url('./fonts/Open_Sans/OpenSans-Regular.ttf');
 }
 
+@font-face {
+  font-family: 'PocketMonk';
+  src: url('./fonts/Pocket_Monk/Pocket_Monk.otf');
+}
+
 * {
   background-color: #CC0000;
   font-family: 'OpenSans', Helvetica, Arial, sans-serif;
