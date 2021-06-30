@@ -14,7 +14,7 @@ class Search extends Component {
 	}
 
   onSubmitSearch = () => {
-    fetch('http://localhost:3001/searchdex', {
+    fetch('https://guarded-plains-41562.herokuapp.com/searchdex', {
       method: 'post',
       headers: {'Content-Type': 'application/json'},
       body: JSON.stringify({
