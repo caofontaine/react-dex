@@ -16,7 +16,7 @@ class App extends Component {
   }
 
   componentDidMount() {
-		fetch('hhttps://guarded-plains-41562.herokuapp.com/pokedex').then(response => {
+		fetch('https://guarded-plains-41562.herokuapp.com/pokedex').then(response => {
 			return response.json();
 		})
 		.then(pokemon => {
