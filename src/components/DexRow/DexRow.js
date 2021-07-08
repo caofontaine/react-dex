@@ -1,7 +1,7 @@
 import React from 'react';
 import './DexRow.css';
 
-const DexRow = ({ dexNum, name, type1, type2, region }) => {
+const DexRow = ({ dexNum, name = 'Bulbasaur', type1, type2, region }) => {
 	const formatImgName = name.toLowerCase()
 														.replace(/[\s']+/g, '') // Removes whitespace or '
 														.replace(/\.+/g, '-') // Replaces . with -

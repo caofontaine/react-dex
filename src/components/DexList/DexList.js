@@ -22,7 +22,7 @@ const DexList = ({ dex }) => {
 						dex.map(pokemon => {
 							return (
 								<DexRow
-									key={pokemon.dexnum}
+									key={pokemon.dexnum + '*'}
 									dexNum={pokemon.dexnum}
 									name={pokemon.name}
 									type1={pokemon.type1}
