@@ -20,8 +20,9 @@ services:
       - key: DEX_LIMIT_MAX
         value: "200"
 
-  - type: static
+  - type: web
     name: react-dex-web
+    runtime: static
     buildCommand: |
       npm install
       npm run build --workspace apps/web
