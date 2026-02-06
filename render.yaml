@@ -33,4 +33,4 @@ services:
 
 databases:
   - name: react-dex-db
-    plan: starter
+    plan: free
