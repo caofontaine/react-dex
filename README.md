@@ -52,7 +52,10 @@ PGDATABASE=react_dex
 PGSSLMODE=
 DEX_CSV_PATH=
 REGIONS_CSV_PATH=
+VITE_API_BASE_URL=
 ```
+
+`VITE_API_BASE_URL` is optional for local dev (the Vite proxy handles `/api`). For hosted deployments, set it to the full API URL.
 
 ### 4) Seed the database
 

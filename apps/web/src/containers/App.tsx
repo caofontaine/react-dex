@@ -6,6 +6,12 @@ import Search from '../components/Search/Search';
 const PAGE_SIZE = 25;
 const FULL_FETCH_LIMIT = 1000;
 const REGION = 'kanto';
+const API_BASE_URL = (import.meta as ImportMeta).env?.VITE_API_BASE_URL ?? '';
+
+const buildApiUrl = (path: string) => {
+  if (!API_BASE_URL) return path;
+  return `${API_BASE_URL.replace(/\/$/, '')}${path}`;
+};
 const TYPE_OPTIONS = [
   'Normal',
   'Fire',
@@ -110,10 +116,10 @@ const App = () => {
     abortRef.current = controller;
 
     try {
-      const response = await fetch(
-        `/api/dex?region=${REGION}&limit=${FULL_FETCH_LIMIT}&offset=0`,
-        { signal: controller.signal }
-      );
+        const response = await fetch(
+          buildApiUrl(`/api/dex?region=${REGION}&limit=${FULL_FETCH_LIMIT}&offset=0`),
+          { signal: controller.signal }
+        );
 
       if (!response.ok) {
         throw new Error(`Dex request failed: ${response.status}`);
@@ -166,7 +172,7 @@ const App = () => {
 
       try {
         const response = await fetch(
-          `/api/dex?region=${REGION}&limit=${PAGE_SIZE}&offset=${nextOffset}`,
+          buildApiUrl(`/api/dex?region=${REGION}&limit=${PAGE_SIZE}&offset=${nextOffset}`),
           { signal: controller.signal }
         );
 
