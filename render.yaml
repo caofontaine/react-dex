@@ -2,7 +2,7 @@ services:
   - type: web
     name: react-dex-api
     env: node
-    plan: starter
+    plan: free
     buildCommand: |
       npm install
       npm run build --workspace packages/shared
@@ -33,4 +33,4 @@ services:
 
 databases:
   - name: react-dex-db
-    plan: starter
+    plan: free
