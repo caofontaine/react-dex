@@ -20,7 +20,7 @@ services:
       - key: DEX_LIMIT_MAX
         value: "200"
 
-  - type: static_site
+  - type: static
     name: react-dex-web
     buildCommand: |
       npm install
