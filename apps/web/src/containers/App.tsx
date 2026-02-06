@@ -248,7 +248,6 @@ const App = () => {
       (entries) => {
         const entry = entries[0];
         const isIntersecting = Boolean(entry?.isIntersecting);
-        isSentinelVisibleRef.current = isIntersecting;
         if (isIntersecting) {
           if (!hasUserScrolledRef.current) {
             return;
