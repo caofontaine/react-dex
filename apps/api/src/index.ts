@@ -1,9 +1,29 @@
 import express from 'express';
+import cors from 'cors';
 import type { DexEntry, Region } from '@react-dex/shared';
 import { checkDatabaseConnection, pool } from './db.js';
 import { cache, DEFAULT_CACHE_TTL_MS } from './cache.js';
 
 const app = express();
+
+const corsOrigins = (process.env.CORS_ORIGIN ?? '')
+  .split(',')
+  .map((origin) => origin.trim())
+  .filter(Boolean);
+
+const allowAllOrigins = corsOrigins.length === 0;
+
+app.use(
+  cors({
+    origin: (origin, callback) => {
+      if (!origin || allowAllOrigins || corsOrigins.includes(origin)) {
+        callback(null, true);
+        return;
+      }
+      callback(new Error('Not allowed by CORS'));
+    },
+  })
+);
 
 app.use(express.json());
 
