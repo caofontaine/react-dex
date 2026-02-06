@@ -1,0 +1,14 @@
+CREATE TABLE IF NOT EXISTS regions (
+  id SERIAL PRIMARY KEY,
+  name TEXT UNIQUE NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS dex (
+  "DexNum" INTEGER PRIMARY KEY,
+  "Name" TEXT NOT NULL,
+  "Type1" TEXT NOT NULL,
+  "Type2" TEXT,
+  "RegionID" INTEGER NOT NULL REFERENCES regions(id)
+);
+
+CREATE INDEX IF NOT EXISTS dex_region_idx ON dex ("RegionID");

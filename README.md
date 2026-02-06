@@ -1,76 +1,91 @@
 # React Dex
 
-A project using React.js to build an interactive, responsive web application to display the Pokédex from the Pokémon series.
+A web-based Pokédex focused on the original 151 Pokémon from Kanto. The app supports browsing, search, type filters, infinite scroll, and local “caught” tracking.
 
-This app is not affiliated with Nintendo/Creatures Inc./GAME FREAK inc./The Pokémon Company in any way and is used purely for educational purposes. Pokémon, Pokémon character names and images are copyrights of Nintendo. © 1995–2021
+## Tech Stack
 
-# Getting Started with Create React App
+- Frontend: React + Vite + TypeScript + Tailwind CSS
+- Backend: Node.js + Express + TypeScript
+- Database: PostgreSQL
+- Testing: Vitest (unit), Playwright (E2E)
+- Monorepo: npm workspaces
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Repository Structure
 
-## Available Scripts
+```
+react-dex/
+├── apps/
+│   ├── web/          # Vite + React frontend
+│   └── api/          # Express backend
+├── packages/
+│   └── shared/       # Shared types
+├── scripts/          # DB schema + seed scripts
+└── docs/             # Specs and setup docs
+```
 
-In the project directory, you can run:
+## Local Development
 
-### `npm start`
+### 1) Install prerequisites
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- Node.js (use nvm)
+- PostgreSQL (see `docs/postgres-setup.md`)
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### 2) Install dependencies
 
-### `npm test`
+```bash
+nvm use
+npm install
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### 3) Configure environment variables
 
-### `npm run build`
+Create `.env.local` in the repo root (or export in your shell). Example values:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```
+PORT=4000
+DEX_LIMIT_MAX=200
+PGHOST=localhost
+PGPORT=3838
+PGUSER=react_dex_user
+PGPASSWORD=react_dex_password
+PGDATABASE=react_dex
+PGSSLMODE=
+DEX_CSV_PATH=
+REGIONS_CSV_PATH=
+VITE_API_BASE_URL=
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+`VITE_API_BASE_URL` is optional for local dev (the Vite proxy handles `/api`). For hosted deployments, set it to the full API URL.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### 4) Seed the database
 
-### `npm run eject`
+```bash
+npm run seed:db
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### 5) Run the app
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```bash
+npm run dev:api
+npm run dev:web
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+- API: `http://localhost:4000`
+- Web: `http://localhost:5173`
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## Useful Scripts
 
-## Learn More
+```bash
+npm run build        # Build shared + api + web
+npm run test:unit    # Vitest
+npm run test:e2e     # Playwright
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Notes
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- Caught state is stored in `localStorage`.
+- Filtering/search fetches all Kanto entries and filters client-side.
 
-### Code Splitting
+## Disclaimer
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This website is a fan-made, non-profit project. Pokémon is a trademark of Nintendo, The Pokémon Company International, Game Freak, and Creatures. All images, characters, and branding are property of their respective owners. No copyright infringement is intended, and this site is not affiliated with, authorized, or endorsed by the official parties. The content provided is for informational and entertainment purposes only.
