@@ -27,7 +27,8 @@ const TYPE_OPTIONS = [
   'Bug',
   'Rock',
   'Ghost',
-  'Dragon'
+  'Dragon',
+  'Fairy'
 ];
 
 const App = () => {
