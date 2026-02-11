@@ -9,7 +9,7 @@ type DexListProps = {
 
 const DexList = ({ dex, caughtDex, onToggleCaught }: DexListProps) => {
   return (
-    <div className="rounded-2xl border border-white/40 bg-white shadow-card">
+    <div className="overflow-hidden rounded-2xl border border-white/40 bg-white shadow-card">
       <div className="overflow-x-auto touch-pan-x">
         <table className="min-w-[640px] w-full border-collapse text-left">
           <caption className="sr-only">Kanto Pokédex</caption>
